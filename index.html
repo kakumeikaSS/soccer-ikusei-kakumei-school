@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サッカー育成革命スクール</title>
+    <!-- Tailwind CSSとRemix IconのCDNを読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white font-inter">
+
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- ロゴとサイト名 -->
+                <a href="#hero" class="flex items-center cursor-pointer">
+                    <img src="https://static.readdy.ai/image/3b5fc62ae7f16fbe50f2d9874ca6b942/db644870613ab530fdf74d6feade5314.png"
+                        alt="サッカー育成革命スクール ロゴ"
+                        class="h-8 w-8 sm:h-10 sm:w-10 mr-2 sm:mr-3 rounded-full" />
+                    <span class="text-lg sm:text-xl font-bold text-blue-600">
+                        <span class="hidden sm:inline">サッカー育成革命スクール</span>
+                        <span class="sm:hidden">サッカー革命</span>
+                    </span>
+                </a>
+
+                <!-- デスクトップ用ナビゲーション -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-blue-600 cursor-pointer">特徴</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-blue-600 cursor-pointer">料金プラン</a>
+                    <a href="#faq" class="text-gray-700 hover:text-blue-600 cursor-pointer">よくある質問</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdedujyZWt5S_W0miYCwV0BGZauhKxXG9Ib22UZlbzCUdQlXg/viewform?usp=header"
+                        target="_blank" rel="noopener noreferrer"
+                        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 whitespace-nowrap cursor-pointer">無料体験</a>
+                </nav>
+
+                <!-- モバイル用メニューボタン -->
+                <button id="mobile-menu-button" class="md:hidden w-6 h-6 flex items-center justify-center cursor-pointer" aria-label="Toggle mobile menu">
+                    <i class="ri-menu-line text-xl"></i>
+                </button>
+            </div>
+
+            <!-- モバイル用メニュー（開閉式） -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#features" class="block px-3 py-2 text-gray-700 hover:text-blue-600 cursor-pointer mobile-menu-link">特徴</a>
+                    <a href="#pricing" class="block px-3 py-2 text-gray-700 hover:text-blue-600 cursor-pointer mobile-menu-link">料金プラン</a>
+                    <a href="#faq" class="block px-3 py-2 text-gray-700 hover:text-blue-600 cursor-pointer mobile-menu-link">よくある質問</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdedujyZWt5S_W0miYCwV0BGZauhKxXG9Ib22UZlbzCUdQlXg/viewform?usp=header"
+                        target="_blank" rel="noopener noreferrer"
+                        class="block px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 cursor-pointer">無料体験</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- ヒーローセクション -->
+        <section id="hero" class="relative bg-gradient-to-br from-blue-600 to-green-500 text-white py-12 sm:py-20 px-4"
+            style="background-image: url('https://readdy.ai/api/search-image?query=professional%20soccer%20training%20field%20with%20players%20practicing%2C%20modern%20sports%20facility%20background%2C%20dynamic%20action%20scene%20with%20coaching%20elements%2C%20vibrant%20athletic%20environment&width=1200&height=600&seq=hero1&orientation=landscape'); background-size: cover; background-position: center; background-blend-mode: overlay;">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <h1 class="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+                    あなたのサッカー人生を<br />
+                    <span class="text-yellow-400">「変革」</span>させる
+                </h1>
+                <p class="text-lg sm:text-2xl md:text-3xl mb-3 sm:mb-4 font-semibold">
+                    『サッカー育成革命スクール』
+                </p>
+                <p class="text-sm sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
+                    元Jリーガーによる個別動画添削で試合で通用する本物の技術を身につける
+                </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdedujyZWt5S_W0miYCwV0BGZauhKxXG9Ib22UZlbzCUdQlXg/viewform?usp=header"
+                    target="_blank" rel="noopener noreferrer"
+                    class="bg-yellow-400 text-black px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-bold rounded-md hover:bg-yellow-300 transition-colors inline-block whitespace-nowrap cursor-pointer">
+                    【人数限定】無料体験はこちら
+                </a>
+            </div>
+        </section>
+
+        <!-- 問題提起セクション -->
+        <section class="py-12 sm:py-16 px-4 bg-gray-50">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 leading-tight px-4">
+                    たくさん練習しているのに上達しないのは<br />
+                    正しい努力ができていないから
+                </h2>
+
+                <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-12">
+                    <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="ri-error-warning-line text-white text-lg sm:text-xl"></i>
+                        </div>
+                        <p class="text-sm sm:text-lg font-medium">練習では上手くいくのに<br />試合では活躍できない</p>
+                    </div>
+                    <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="ri-speed-line text-white text-lg sm:text-xl"></i>
+                        </div>
+                        <p class="text-sm sm:text-lg font-medium">上達のスピードが遅い</p>
+                    </div>
+                    <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center sm:col-span-2 md:col-span-1">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="ri-mind-map text-white text-lg sm:text-xl"></i>
+                        </div>
+                        <p class="text-sm sm:text-lg font-medium">試合での判断力が<br />上がらない</p>
+                    </div>
+                </div>
+
+                <div class="bg-blue-600 text-white p-6 sm:p-8 rounded-lg">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">私も同じ悩みを抱えていました</h3>
+                    <p class="text-sm sm:text-lg leading-relaxed">
+                        現役時代、私は何度も失敗を経験しました。どんなに技術を磨いても、試合で結果を出すことができず、
+                        本当の意味での上達がないことを痛感しました。そんな中で気づいたのは、サッカーで大切なのは本物のスキルと
+                        サッカーの理解度と自分の体を思うように動かす身体操作を早いうちから取り組むことで、
+                        サッカーが上達し楽しくなるのではないかと考えたからです。この経験から生まれた革命的メソッドで、
+                        あなたのサッカーを根本から変革させます。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ブレイクスルーの物語セクション -->
+        <section class="py-12 sm:py-20 px-4 text-white relative"
+            style="background-image: url('https://readdy.ai/api/search-image?query=former%20professional%20soccer%20player%20coaching%20young%20athletes%20on%20training%20field%2C%20inspirational%20mentoring%20scene%2C%20sunset%20lighting%20with%20emotional%20atmosphere%2C%20Japanese%20football%20culture%20background&width=1200&height=600&seq=story1&orientation=landscape'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="max-w-4xl mx-auto relative z-10">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 leading-tight">
+                    私が体得した『革命的メソッド』と<br />
+                    このスクールへの想い
+                </h2>
+                <div class="text-sm sm:text-lg leading-relaxed space-y-4 sm:space-y-6">
+                    <p>
+                        現役時代、私は数多くの挫折を経験しました。どんなに技術を磨いても、試合で結果を出せない時期が続いたのです。
+                        そんな中で気づいたのは、「練習のための技術」と「試合で使える技術」は全く別物だということでした。
+                    </p>
+                    <p>
+                        この革命的発見から生まれたメソッドを、次世代の選手たちに伝えたい。
+                        そんな想いでこのスクールを立ち上げました。一人でも多くの選手が、本当の意味での上達を実感し、
+                        サッカーを通じて人生を豊かにしてほしいと願っています。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 特徴セクション -->
+        <section id="features" class="py-12 sm:py-16 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 leading-tight">
+                    『サッカー育成革命スクール』で<br />
+                    あなたはこう変わる！
+                </h2>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                    <div class="text-center p-4 sm:p-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="ri-video-line text-blue-600 text-xl sm:text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">個別動画添削</h3>
+                        <p class="text-sm sm:text-base text-gray-600">あなたのプレー動画を元Jリーガーが詳細に分析し、具体的な改善ポイントを指導</p>
+                    </div>
+
+                    <div class="text-center p-4 sm:p-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="ri-user-star-line text-green-600 text-xl sm:text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">個人技術の向上</h3>
+                        <p class="text-sm sm:text-base text-gray-600">試合で本当に使える技術を身につけ、自信を持ってプレーできるように</p>
+                    </div>
+
+                    <div class="text-center p-4 sm:p-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="ri-brain-line text-purple-600 text-xl sm:text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">判断力の向上</h3>
+                        <p class="text-sm sm:text-base text-gray-600">状況を読む力を身につけ、常に最適なプレー選択ができるように</p>
+                    </div>
+
+                    <div class="text-center p-4 sm:p-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="ri-body-scan-line text-red-600 text-xl sm:text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">身体操作の習得</h3>
+                        <p class="text-sm sm:text-base text-gray-600">効率的な身体の使い方をマスターし、パフォーマンスを最大化</p>
+                    </div>
+
+                    <div class="text-center p-4 sm:p-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="ri-trophy-line text-yellow-600 text-xl sm:text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">試合で使える技術</h3>
+                        <p class="text-sm sm:text-base text-gray-600">練習で身につけた技術を試合で確実に発揮できる実践力を養成</p>
+                    </div>
+
+                    <div class="text-center p-4 sm:p-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="ri-message-3-line text-indigo-600 text-xl sm:text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">LINEサポート</h3>
+                        <p class="text-sm sm:text-base text-gray-600">いつでも気軽に質問や相談ができるLINEサポートで継続的な成長をサポート</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 料金プランセクション -->
+        <section id="pricing" class="py-12 sm:py-16 px-4 bg-gray-50">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 sm:mb-6 leading-tight">
+                    あなたの目標とコミットメントに<br />
+                    合わせた3つのプラン
+                </h2>
+                <p class="text-center text-gray-600 mb-8 sm:mb-12 text-sm sm:text-lg">
+                    まずは無料体験からお気軽にお試しください
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-12">
+                    <!-- ワンポイントプラン -->
+                    <div class="bg-white rounded-lg shadow-lg p-4 sm:p-8 relative">
+                        <div class="absolute -top-3 left-4">
+                            <span class="bg-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">人数限定</span>
+                        </div>
+                        <h3 class="text-lg sm:text-2xl font-bold mb-3 sm:mb-4 text-center">ワンポイントプラン</h3>
+                        <div class="text-center mb-4 sm:mb-6">
+                            <div class="text-2xl sm:text-3xl font-bold text-blue-600">¥9,800</div>
+                            <div class="text-sm sm:text-base text-gray-600">(税込) / 1回</div>
+                        </div>
+                        <ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+                            <li class="flex items-start">
+                                <div class="w-4 h-4 sm:w-5 sm:h-5 bg-green-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </div>
+                                <span class="text-sm sm:text-base">プレー動画（1試合分）1本添削</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-4 h-4 sm:w-5 sm:h-5 bg-green-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </div>
+                                <span class="text-sm sm:text-base">改善すべき核心のポイントを厳選解説</span>
+                            </li>
+                        </ul>
+                        <a href="#onepoint-plan-details"
+                            class="w-full bg-blue-600 text-white py-2 sm:py-3 rounded-md hover:bg-blue-700 font-bold whitespace-nowrap cursor-pointer text-sm sm:text-base inline-block text-center">
+                            詳細を見る
+                        </a>
+                    </div>
+
+                    <!-- スタンダードプラン -->
+                    <div class="bg-white rounded-lg shadow-lg p-4 sm:p-8 relative border-2 border-blue-500">
+                        <div class="absolute -top-3 left-4 flex gap-1 sm:gap-2">
+                            <span class="bg-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">人気No.1</span>
+                            <span class="bg-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">50%OFF</span>
+                        </div>
+                        <div class="absolute -top-3 right-4">
+                            <span class="bg-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">人数限定</span>
+                        </div>
+                        <h3 class="text-lg sm:text-2xl font-bold mb-3 sm:mb-4 text-center mt-2">スタンダードプラン</h3>
+                        <div class="text-center mb-4 sm:mb-6">
+                            <div class="text-gray-400 line-through text-sm sm:text-lg">¥15,800</div>
+                            <div class="text-2xl sm:text-3xl font-bold text-blue-600">¥7,900</div>
+                            <div class="text-sm sm:text-base text-gray-600">(税込) / 月</div>
+                        </div>
+                        <ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+                            <li class="flex items-start">
+                                <div class="w-4 h-4 sm:w-5 sm:h-5 bg-green-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </div>
+                                <span class="text-sm sm:text-base">月2回動画添削</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-4 h-4 sm:w-5 sm:h-5 bg-green-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </div>
+                                <span class="text-sm sm:text-base">音声解説</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-4 h-4 sm:w-5 sm:h-5 bg-green-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </div>
+                                <span class="text-sm sm:text-base">LINE個別相談し放題</span>
+                            </li>
+                        </ul>
+                        <a href="#standard-plan-details"
+                            class="w-full bg-blue-600 text-white py-2 sm:py-3 rounded-md hover:bg-blue-700 font-bold whitespace-nowrap cursor-pointer text-sm sm:text-base inline-block text-center">
+                            詳細を見る
+                        </a>
+                    </div>
+
+                    <!-- プレミアムプラン -->
+                    <div class="bg-white rounded-lg shadow-lg p-4 sm:p-8 relative">
+                        <div class="absolute -top-3 left-4">
+                            <span class="bg-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">人数限定</span>
+                        </div>
+                        <div class="absolute -top-3 right-4">
+                            <span class="bg-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">50%OFF</span>
+                        </div>
+                        <h3 class="text-lg sm:text-2xl font-bold mb-3 sm:mb-4 text-center">プレミアムプラン</h3>
+                        <div class="text-center mb-4 sm:mb-6">
+                            <div class="text-gray-400 line-through text-sm sm:text-lg">¥29,800</div>
+                            <div class="text-2xl sm:text-3xl font-bold text-blue-600">¥14,900</div>
+                            <div class="text-sm sm:text-base text-gray-600">(税込) / 月</div>
+                        </div>
+                        <ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+                            <li class="flex items-start">
+                                <div class="w-4 h-4 sm:w-5 sm:h-5 bg-green-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </div>
+                                <span class="text-sm sm:text-base">週1回（計4回）動画添削</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-4 h-4 sm:w-5 sm:h-5 bg-green-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </div>
+                                <span class="text-sm sm:text-base">詳細フィードバック</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-4 h-4 sm:w-5 sm:h-5 bg-green-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </div>
+                                <span class="text-sm sm:text-base">LINE相談無制限</span>
+                            </li>
+                        </ul>
+                        <a href="#premium-plan-details"
+                            class="w-full bg-blue-600 text-white py-2 sm:py-3 rounded-md hover:bg-blue-700 font-bold whitespace-nowrap cursor-pointer text-sm sm:text-base inline-block text-center">
+                            詳細を見る
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScuHBNXSWyNEy010A95bywlkmrV5DALHg56G6RmuKECfREdxA/viewform?usp=header"
+                        target="_blank" rel="noopener noreferrer"
+                        class="bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-bold rounded-md hover:bg-blue-700 inline-block whitespace-nowrap cursor-pointer">
+                        お申し込みはこちら
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ワンポイントプラン詳細セクション -->
+        <section id="onepoint-plan-details" class="py-12 sm:py-16 px-4 bg-white hidden">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex justify-end items-start mb-6">
+                    <button id="close-onepoint-details" class="bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 rounded-md hover:bg-gray-300 cursor-pointer text-sm sm:text-base flex items-center">
+                        <i class="ri-close-line mr-1"></i>
+                        閉じる
+                    </button>
+                </div>
+                <div class="text-center">
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">ワンポイントプラン</h1>
+                    <p class="text-base sm:text-xl">あなたの核心的な課題を1回で明確に把握</p>
+                </div>
+                <div class="mt-8 sm:mt-12">
+                    <div class="grid md:grid-cols-2 gap-8 sm:gap-12">
+                        <div>
+                            <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">プラン内容</h2>
+                            <ul class="space-y-3 sm:space-y-4">
+                                <li class="flex items-start">
+                                    <div class="w-5 h-5 sm:w-6 sm:h-6 bg-blue-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                        <i class="ri-check-line text-white text-xs sm:text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-sm sm:text-base">プレー動画1本添削</h3>
+                                        <p class="text-xs sm:text-sm text-gray-600">1試合分の動画を詳細に分析します</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="w-5 h-5 sm:w-6 sm:h-6 bg-blue-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                        <i class="ri-check-line text-white text-xs sm:text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-sm sm:text-base">核心ポイント厳選解説</h3>
+                                        <p class="text-xs sm:text-sm text-gray-600">改善すべき核心のポイントを厳選解説</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="mt-8">
+                                <h3 class="text-lg font-bold mb-2">このプランのポイント</h3>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    スキル向上よりも、試合の動き、原則、戦術などの理解度を高めるのに非常に適したプランです。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-6 sm:p-8 rounded-lg">
+                            <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">料金</h3>
+                            <div class="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">¥9,800</div>
+                            <div class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">(税込) / 1回</div>
+                            <div class="bg-red-100 text-red-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold inline-block">
+                                人数限定
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 sm:mt-12">
+                        <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">このプランがおすすめの方</h2>
+                        <ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-fill text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span class="text-sm sm:text-base">試合でもっと活躍したい人</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-fill text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span class="text-sm sm:text-base">戦術理解度を高めたい人</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-fill text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span class="text-sm sm:text-base">試合でボールに触れる回数を増やしたい人</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-fill text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span class="text-sm sm:text-base">ボールをもらった時に自分の特徴を活かせるようになりたい人</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 sm:mt-12 text-center">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScuHBNXSWyNEy010A95bywlkmrV5DALHg56G6RmuKECfREdxA/viewform?usp=header"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-bold rounded-md hover:bg-blue-700 inline-block whitespace-nowrap cursor-pointer">
+                            お申し込みはこちら
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- スタンダードプラン詳細セクション -->
+        <section id="standard-plan-details" class="py-12 sm:py-16 px-4 bg-white hidden">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex justify-end items-start mb-6">
+                    <button id="close-standard-details" class="bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 rounded-md hover:bg-gray-300 cursor-pointer text-sm sm:text-base flex items-center">
+                        <i class="ri-close-line mr-1"></i>
+                        閉じる
+                    </button>
+                </div>
+                <div class="text-center">
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">スタンダードプラン</h1>
+                    <p class="text-base sm:text-xl mb-3 sm:mb-4">継続的な成長で確実にレベルアップ</p>
+                    <div class="flex justify-center gap-2">
+                        <span class="bg-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">人気No.1</span>
+                        <span class="bg-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">50%OFF</span>
+                    </div>
+                </div>
+                <div class="mt-8 sm:mt-12">
+                    <div class="grid md:grid-cols-2 gap-8 sm:gap-12">
+                        <div>
+                            <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">プラン内容</h2>
+                            <ul class="space-y-3 sm:space-y-4">
+                                <li class="flex items-start">
+                                    <div class="w-5 h-5 sm:w-6 sm:h-6 bg-blue-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                        <i class="ri-check-line text-white text-xs sm:text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-sm sm:text-base">月2回動画添削</h3>
+                                        <p class="text-xs sm:text-sm text-gray-600">継続的な改善で着実にレベルアップ</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="w-5 h-5 sm:w-6 sm:h-6 bg-blue-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                        <i class="ri-check-line text-white text-xs sm:text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-sm sm:text-base">音声解説</h3>
+                                        <p class="text-xs sm:text-sm text-gray-600">詳細な音声解説で理解度アップ</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="w-5 h-5 sm:w-6 sm:h-6 bg-blue-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                        <i class="ri-check-line text-white text-xs sm:text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-sm sm:text-base">LINE個別相談し放題</h3>
+                                        <p class="text-xs sm:text-sm text-gray-600">いつでも気軽に質問・相談可能</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-6 sm:p-8 rounded-lg">
+                            <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">料金</h3>
+                            <div class="text-gray-400 line-through text-sm sm:text-lg">¥15,800</div>
+                            <div class="text-2xl sm:text-3xl font-bold text-blue-600">¥7,900</div>
+                            <div class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">(税込) / 月</div>
+                            <div class="flex gap-2">
+                                <div class="bg-orange-100 text-orange-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">
+                                    50%OFF
+                                </div>
+                                <div class="bg-red-100 text-red-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">
+                                    人数限定
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 sm:mt-12">
+                        <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">このプランがおすすめの方</h2>
+                        <ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-fill text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span class="text-sm sm:text-base">スキル向上や身体操作の上達スピードを上げたい人</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-fill text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span class="text-sm sm:text-base">個人戦術や細かい局面の動き、考え方を向上させたい人</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-fill text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span class="text-sm sm:text-base">定期的なアドバイスで着実に成長したい人</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 sm:mt-12 text-center">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScuHBNXSWyNEy010A95bywlkmrV5DALHg56G6RmuKECfREdxA/viewform?usp=header"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-bold rounded-md hover:bg-blue-700 inline-block whitespace-nowrap cursor-pointer">
+                            お申し込みはこちら
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- プレミアムプラン詳細セクション -->
+        <section id="premium-plan-details" class="py-12 sm:py-16 px-4 bg-white hidden">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex justify-end items-start mb-6">
+                    <button id="close-premium-details" class="bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 rounded-md hover:bg-gray-300 cursor-pointer text-sm sm:text-base flex items-center">
+                        <i class="ri-close-line mr-1"></i>
+                        閉じる
+                    </button>
+                </div>
+                <div class="text-center">
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">プレミアムプラン</h1>
+                    <p class="text-base sm:text-xl mb-3 sm:mb-4">最高レベルの個別サポート</p>
+                    <div class="flex justify-center gap-2">
+                        <span class="bg-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">50%OFF</span>
+                        <span class="bg-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">人数限定</span>
+                    </div>
+                </div>
+                <div class="mt-8 sm:mt-12">
+                    <div class="grid md:grid-cols-2 gap-8 sm:gap-12">
+                        <div>
+                            <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">プラン内容</h2>
+                            <ul class="space-y-3 sm:space-y-4">
+                                <li class="flex items-start">
+                                    <div class="w-5 h-5 sm:w-6 sm:h-6 bg-purple-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                        <i class="ri-check-line text-white text-xs sm:text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-sm sm:text-base">週1回（計4回）動画添削</h3>
+                                        <p class="text-xs sm:text-sm text-gray-600">最高頻度の添削で急激な成長を実現</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="w-5 h-5 sm:w-6 sm:h-6 bg-purple-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                        <i class="ri-check-line text-white text-xs sm:text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-sm sm:text-base">詳細フィードバック</h3>
+                                        <p class="text-xs sm:text-sm text-gray-600">プロレベルの詳細分析とアドバイス</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="w-5 h-5 sm:w-6 sm:h-6 bg-purple-500 rounded-full flex items-center justify-center mr-2 sm:mr-3 mt-0.5">
+                                        <i class="ri-check-line text-white text-xs sm:text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-sm sm:text-base">LINE相談無制限</h3>
+                                        <p class="text-xs sm:text-sm text-gray-600">24時間いつでも相談・質問し放題</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-6 sm:p-8 rounded-lg">
+                            <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">料金</h3>
+                            <div class="text-gray-400 line-through text-sm sm:text-lg">¥29,800</div>
+                            <div class="text-2xl sm:text-3xl font-bold text-purple-600">¥14,900</div>
+                            <div class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">(税込) / 月</div>
+                            <div class="flex gap-2">
+                                <div class="bg-orange-100 text-orange-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">
+                                    50%OFF
+                                </div>
+                                <div class="bg-red-100 text-red-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">
+                                    人数限定
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 sm:mt-12">
+                        <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">このプランがおすすめの方</h2>
+                        <ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-fill text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span class="text-sm sm:text-base">スキル向上、身体操作の上達スピードを上げたい人</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-fill text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span class="text-sm sm:text-base">プロを目指していて、練習・撮影頻度が多く、改善回数を増やしたい人</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-fill text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span class="text-sm sm:text-base">局面の動き、考え方、原則などを深く理解し上達したい人</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 sm:mt-12 text-center">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScuHBNXSWyNEy010A95bywlkmrV5DALHg56G6RmuKECfREdxA/viewform?usp=header"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-bold rounded-md hover:bg-purple-700 inline-block whitespace-nowrap cursor-pointer">
+                            お申し込みはこちら
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- お申し込みの流れセクション -->
+        <section class="py-12 sm:py-16 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
+                    お申し込みの流れ
+                </h2>
+
+                <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+                    <div class="text-center">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <span class="text-white font-bold text-sm sm:text-base">1</span>
+                        </div>
+                        <h3 class="font-bold mb-2 text-sm sm:text-base">フォーム送信</h3>
+                        <p class="text-xs sm:text-sm text-gray-600">お申し込みフォームでプランを選択</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <span class="text-white font-bold text-sm sm:text-base">2</span>
+                        </div>
+                        <h3 class="font-bold mb-2 text-sm sm:text-base">動画送信</h3>
+                        <p class="text-xs sm:text-sm text-gray-600">LINE、YouTube限定公開またはギガファイルで動画を送信</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <span class="text-white font-bold text-sm sm:text-base">3</span>
+                        </div>
+                        <h3 class="font-bold mb-2 text-sm sm:text-base">分析・添削</h3>
+                        <p class="text-xs sm:text-sm text-gray-600">元Jリーガーが詳細に分析し添削動画を作成</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <span class="text-white font-bold text-sm sm:text-base">4</span>
+                        </div>
+                        <h3 class="font-bold mb-2 text-sm sm:text-base">フィードバック</h3>
+                        <p class="text-xs sm:text-sm text-gray-600">具体的な改善ポイントと練習方法をお渡し</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 無料体験セクション -->
+        <section class="py-12 sm:py-16 px-4 bg-yellow-50">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 leading-tight">
+                    【人数限定】あなたのプレーが変わる無料体験！
+                </h2>
+                <p class="text-lg sm:text-xl font-bold text-red-600 mb-6 sm:mb-8">人数限定！</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdedujyZWt5S_W0miYCwV0BGZauhKxXG9Ib22UZlbzCUdQlXg/viewform?usp=header"
+                    target="_blank" rel="noopener noreferrer"
+                    class="bg-yellow-400 text-black px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-bold rounded-md hover:bg-yellow-300 transition-colors inline-block whitespace-nowrap cursor-pointer">
+                    【人数限定】無料体験はこちら
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQセクション -->
+        <section id="faq" class="py-12 sm:py-16 px-4 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
+                    よくあるご質問
+                </h2>
+
+                <div class="space-y-4 sm:space-y-6">
+                    <div class="bg-gray-50 p-4 sm:p-6 rounded-lg">
+                        <h3 class="font-bold text-base sm:text-lg mb-2 sm:mb-3">Q. 動画の撮影方法は？</h3>
+                        <p class="text-sm sm:text-base text-gray-700">A. スマートフォンで撮影したもので十分です。試合全体を撮影していただき、LINE、YouTube限定公開またはギガファイルでお送りください。</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-4 sm:p-6 rounded-lg">
+                        <h3 class="font-bold text-base sm:text-lg mb-2 sm:mb-3">Q. どのくらいで効果が出ますか？</h3>
+                        <p class="text-sm sm:text-base text-gray-700">A. 個人差はありますが、多くの方が1ヶ月以内にプレーの変化を実感されています。継続的な取り組みが重要です。</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-4 sm:p-6 rounded-lg">
+                        <h3 class="font-bold text-base sm:text-lg mb-2 sm:mb-3">Q. 年齢制限はありますか？</h3>
+                        <p class="text-sm sm:text-base text-gray-700">A. 小学生から社会人まで、サッカーを真剣に取り組む全ての方が対象です。レベルに関係なく指導いたします。</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-4 sm:p-6 rounded-lg">
+                        <h3 class="font-bold text-base sm:text-lg mb-2 sm:mb-3">Q. 途中でプランの変更は可能ですか？</h3>
+                        <p class="text-sm sm:text-base text-gray-700">A. はい、可能です。LINEでお気軽にご相談ください。あなたの成長に合わせて最適なプランをご提案します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- お問い合わせ/CTAセクション -->
+        <section class="py-12 sm:py-16 px-4 bg-blue-600 text-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 leading-tight">
+                    あなたのサッカー人生を変える始まりを<br />
+                    今ここから。
+                </h2>
+
+                <div class="text-center mb-8 sm:mb-12">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdedujyZWt5S_W0miYCwV0BGZauhKxXG9Ib22UZlbzCUdQlXg/viewform?usp=header"
+                        target="_blank" rel="noopener noreferrer"
+                        class="bg-yellow-400 text-black px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-bold rounded-md hover:bg-yellow-300 transition-colors inline-block whitespace-nowrap cursor-pointer">
+                        【人数限定】無料体験はこちら
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+                    <div class="bg-white/10 p-4 sm:p-6 rounded-lg text-center">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="ri-message-3-fill text-white text-xl sm:text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">LINE公式アカウント</h3>
+                        <p class="mb-3 sm:mb-4 text-sm sm:text-base">個別相談やプラン詳細についてお気軽にお問い合わせください</p>
+                        <a href="https://lin.ee/7488QtX" target="_blank" rel="noopener noreferrer"
+                            class="bg-green-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-green-600 font-bold inline-block whitespace-nowrap cursor-pointer text-sm sm:text-base">
+                            友だち追加
+                        </a>
+                    </div>
+
+                    <div class="bg-white/10 p-4 sm:p-6 rounded-lg text-center">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="ri-instagram-fill text-white text-xl sm:text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2">Instagram</h3>
+                        <p class="mb-1 text-sm sm:text-base">@kappa__football.1</p>
+                        <p class="mb-3 sm:mb-4 text-xs sm:text-sm">日々のトレーニング情報やサッカーのコツを配信中</p>
+                        <a href="https://www.instagram.com/kappa__football.1/?locale=ja_JP" target="_blank" rel="noopener noreferrer"
+                            class="bg-pink-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-pink-600 font-bold inline-block whitespace-nowrap cursor-pointer text-sm sm:text-base">
+                            フォローする
+                        </a>
+                    </div>
+                </div>
+
+                <p class="text-center text-sm sm:text-lg mt-8 sm:mt-12">
+                    ご質問はLINEからお気軽にお問い合わせください！
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+            const allLinks = document.querySelectorAll('a[href^="#"]');
+
+            const onepointDetails = document.getElementById('onepoint-plan-details');
+            const standardDetails = document.getElementById('standard-plan-details');
+            const premiumDetails = document.getElementById('premium-plan-details');
+            const sections = [onepointDetails, standardDetails, premiumDetails];
+
+            const hideAllDetails = () => {
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+            };
+
+            // モバイルメニューの開閉
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // モバイルメニュー内のリンクをクリックしたらメニューを閉じる
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // ページ内リンクのスムーズスクロール
+            allLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    // もし詳細セクションへのリンクなら、他の詳細を非表示にしてから表示
+                    if (targetId.includes('-plan-details')) {
+                        hideAllDetails();
+                        targetElement.classList.remove('hidden');
+                    }
+
+                    if (targetElement) {
+                        const headerOffset = document.querySelector('header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // 各詳細セクションの「閉じる」ボタン
+            document.getElementById('close-onepoint-details').addEventListener('click', () => {
+                onepointDetails.classList.add('hidden');
+                document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+            });
+            document.getElementById('close-standard-details').addEventListener('click', () => {
+                standardDetails.classList.add('hidden');
+                document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+            });
+            document.getElementById('close-premium-details').addEventListener('click', () => {
+                premiumDetails.classList.add('hidden');
+                document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
